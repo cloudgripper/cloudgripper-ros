@@ -19,7 +19,7 @@ class ImagePublisher(Node):
         self.publisher_top = self.create_publisher(Image, '/top_camera/image', 10)
 
         self.base_url = f"https://cloudgripper.zahidmhd.com/{robot_name}/api/v1.1/robot"
-        self.timer_period = 0.5  # seconds (fetch and publish every 5 seconds)
+        self.timer_period = 0.5  # seconds
         self.timer = self.create_timer(self.timer_period, self.timer_callback)
         self.bridge = CvBridge()
         self.api_key = os.environ["CLOUDGRIPPER_API_KEY"]

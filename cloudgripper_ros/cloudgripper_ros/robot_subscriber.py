@@ -100,7 +100,7 @@ class RobotControlSubscriber(Node):
             self.get_logger().error(f'Exception during request: {str(e)}')
 
     def step_command_callback(self, msg):
-        # Handle rotation angle
+        # Handle step commands
         self.get_logger().info(f'Step Direction: {msg.data}')
         payload = {}
         headers = {'apiKey': self.api_key}
