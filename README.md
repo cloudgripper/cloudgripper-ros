@@ -20,3 +20,24 @@ Ensure `CLOUDGRIPPER_API_KEY` is set in your environment for authentication with
 - **Gripper Control Topic (`/gripper_value`)**: Publish `std_msgs/msg/Float32` to adjust the gripper' position (0.0 to 1.0).
 - **Rotation Control Topic (`/rotation_angle`)**: Publish `std_msgs/msg/Int16`  to adjust the rotation angle (0 to 180 degrees).
 - **Step Commands Topic (`/step_command`)**: Publish `std_msgs/msg/String` messages with values `"right"`, `"left"`, `"forward"`, or `"backward"` to step move the robot,
+
+
+### Keyboard Control
+- **Activate Keyboard Control**: Run the node with `ros2 run cloudgripper_ros keyboard_control`. This will enable real-time keyboard control for the Cloudgripper.
+- **Key Bindings**:
+  - **Movement**:
+    - `W`: Move forward
+    - `S`: Move backward
+    - `A`: Move left
+    - `D`: Move right
+  - **Z-Axis Control**:
+    - `Arrow Up`: Move up
+    - `Arrow Down`: Move down
+  - **Rotation Control**:
+    - `Arrow Left`: Rotate left
+    - `Arrow Right`: Rotate right
+  - **Gripper Control**:
+    - `Z`: Close gripper
+    - `X`: Open gripper
+
+Ensure the terminal window running the keyboard control node is active to receive key inputs.

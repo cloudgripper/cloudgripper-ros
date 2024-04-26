@@ -26,6 +26,7 @@ setup(
             'state_publisher = cloudgripper_ros.state_publisher:main',
             'robot_subscriber = cloudgripper_ros.robot_subscriber:main',
             'image_publisher = cloudgripper_ros.image_publisher:main',
+            'keyboard_control = cloudgripper_ros.keyboard_control:main',
         ],
     },
 )
