@@ -34,7 +34,7 @@ class ImagePublisher(Node):
         payload = {}
         headers = {'apiKey': self.api_key}  
         try:
-            response = requests.get(self.base_api + endpoint, headers=headers, data={}, timeout=0.5)
+            response = requests.get(self.base_url + endpoint, headers=headers, data={}, timeout=0.5)
             if response.status_code == 200:
                 response = response.json()
                 getimage = response['data']
