@@ -1,0 +1,7 @@
+# Request
+string camera_type  # 'base' or 'top'
+---
+# Response
+bool success
+string message
+sensor_msgs/Image image

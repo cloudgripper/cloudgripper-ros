@@ -1,0 +1,5 @@
+# Request
+---
+# Response
+cloudgripper_msgs/RobotState robot_state
+bool success

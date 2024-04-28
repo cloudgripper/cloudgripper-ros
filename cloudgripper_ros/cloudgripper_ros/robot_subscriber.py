@@ -10,9 +10,9 @@ class RobotControlSubscriber(Node):
 
     def __init__(self):
         super().__init__('robot_control_subscriber')
-        robot_name = self.declare_parameter('robot_name', '1').get_parameter_value().string_value
+        self.robot_name = self.declare_parameter('robot_name', '1').get_parameter_value().string_value
         self.api_key = os.environ["CLOUDGRIPPER_API_KEY"]
-        self.base_url = f"https://cloudgripper.zahidmhd.com/{robot_name}/api/v1.1/robot"
+        self.base_url = f"https://cloudgripper.zahidmhd.com/{self.robot_name}/api/v1.1/robot"
         self.subscription_xy = self.create_subscription(
             Point,
             '/xy',
@@ -63,7 +63,7 @@ class RobotControlSubscriber(Node):
         try:
             response = requests.get(url, headers=headers, data={}, timeout=0.5)
             if response.status_code == 200:
-                self.get_logger().info(f'Successfully sent Z-movement with z: {msg.data}')
+                self.get_logger().info(f'{self.robot_name}: Successfully sent Z-movement with z: {msg.data}')
             else:
                 self.get_logger().error(f'Failed to send Z-movement: HTTP {response.status_code}')
         except Exception as e:
