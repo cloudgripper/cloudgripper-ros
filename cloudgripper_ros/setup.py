@@ -23,10 +23,11 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'state_publisher = cloudgripper_ros.state_publisher:main',
+            'state_service = cloudgripper_ros.state_service:main',
             'robot_subscriber = cloudgripper_ros.robot_subscriber:main',
-            'image_publisher = cloudgripper_ros.image_publisher:main',
-            'keyboard_control = cloudgripper_ros.keyboard_control:main',
+            'image_service = cloudgripper_ros.image_service:main',
+            'image_re_publish = cloudgripper_ros.image_re_publish:main',
+            'keyboard_teleop_control = cloudgripper_ros.keyboard_teleop_control:main',
         ],
     },
 )

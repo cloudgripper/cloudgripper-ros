@@ -18,14 +18,20 @@ def generate_launch_description():
         ),
         Node(
             package='cloudgripper_ros',
-            executable='image_publisher',
-            name='image_publisher',
+            executable='image_service',
+            name='image_service',
             parameters=[{'robot_name': LaunchConfiguration('robot_name')}]
         ),
         Node(
             package='cloudgripper_ros',
-            executable='state_publisher',
-            name='state_publisher',
+            executable='state_service',
+            name='state_service',
+            parameters=[{'robot_name': LaunchConfiguration('robot_name')}]
+        ),
+        Node(
+            package='cloudgripper_ros',
+            executable='keyboard_teleop_control',
+            name='keyboard_teleop_control',
             parameters=[{'robot_name': LaunchConfiguration('robot_name')}]
         ),
     ])
