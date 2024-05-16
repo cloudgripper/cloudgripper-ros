@@ -2,7 +2,7 @@ import rclpy
 from rclpy.node import Node
 from cv_bridge import CvBridge
 from sensor_msgs.msg import Image
-from cloudgripper_msgs.srv import GetCameraImage  # Adjust this to your actual service definition
+from cloudgripper_msgs.srv import GetCameraImage
 
 class DualCameraPublisher(Node):
     def __init__(self):

@@ -9,7 +9,7 @@ import os
 from sensor_msgs.msg import Image
 from std_msgs.msg import Header
 from cv_bridge import CvBridge
-from cloudgripper_msgs.srv import GetCameraImage  # Replace with your actual package name
+from cloudgripper_msgs.srv import GetCameraImage
 
 class ImageService(Node):
     def __init__(self):
